@@ -34,7 +34,7 @@
 
 <script>
 import AutoComplete from "@/components/form/AutoComplete.vue";
-import InputDialog from "@/components/form/InputDialog.vue";
+import InputDialog from "@/components/dialog/InputDialog.vue";
 
 export default {
   name: "searchForm",

@@ -1,23 +1,25 @@
+@import "./variables";
+
 @font-face {
     font: {
-        family: "11StreetGothic";
-        weight: 700;
+        family: $font-family-11st;
+        weight: $font-weight-bold;
     }
     src: url("@/assets/fonts/11STREET_Gothic_bold.otf");
 }
 
 @font-face {
     font: {
-        family: "11StreetGothic";
-        weight: 500;
+        family: $font-family-11st;
+        weight: $font-weight-regular;
     }
     src: url("@/assets/fonts/11STREET_Gothic_regular.otf");
 }
 
 @font-face {
     font: {
-        family: "11StreetGothic";
-        weight: 300;
+        family: $font-family-11st;
+        weight: $font-weight-light;
     }
     src: url("@/assets/fonts/11STREET_Gothic_light.otf");
 }

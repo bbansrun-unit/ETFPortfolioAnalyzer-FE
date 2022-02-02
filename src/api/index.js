@@ -1,16 +1,16 @@
-import axios from '../utils/axios';
+import axios from "@/utils/axios";
 
 export default {
   getList() {
     return axios({
-      url: '/api/etfs',
-      method: 'GET',
+      url: "/api/etfs",
+      method: "GET",
     });
   },
   getDetail(code) {
     return axios({
       url: `/api/etf/${code}`,
-      method: 'GET',
+      method: "GET",
     });
   },
 };

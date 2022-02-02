@@ -35,11 +35,11 @@
 <script>
 import LNB from "@/components/global/LNB.vue";
 import GNB from "@/components/global/GNB.vue";
-import Cover from "@/components/Cover.vue";
+import Cover from "@/components/global/Cover.vue";
 import SearchForm from "@/components/form/SearchForm.vue";
-import ResultDialog from "@/components/ResultDialog.vue";
+import ResultDialog from "@/components/dialog/ResultDialog.vue";
 import CalculateButton from "@/components/CalculateButton.vue";
-import FooterComponent from "@/components/FooterComponent.vue";
+import FooterComponent from "@/components/global/FooterComponent.vue";
 import HamburgerButton from "@/components/global/HamburgerButton.vue";
 
 export default {

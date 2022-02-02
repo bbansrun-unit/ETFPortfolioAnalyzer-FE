@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import Cover from "@/components/Cover.vue";
+import Cover from "@/components/global/Cover.vue";
 import LNBMenu from "@/components/global/LNBMenu.vue";
 
 export default {
