@@ -39,7 +39,7 @@ $button-color-inv: #000;
   background: none;
   cursor: pointer;
   padding: 0 !important;
-  margin: 1em 0.5em;
+  margin: 1em 0.5em 1em 1em;
   transform: rotate(0deg);
   transition: 500ms ease-in-out;
   z-index: 10000;

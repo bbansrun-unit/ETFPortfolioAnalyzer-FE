@@ -9,8 +9,9 @@
     <section class="content">
       <header class="large">
         <strong>
-          보유하고 있는 ETF 정보를 입력해서
-          <em>각 종목의 포트폴리오 내 비중</em>을 확인해보세요.
+          <span>보유하고 있는 ETF 정보를 입력해서</span>
+          <br />
+          <span><em>각 종목의 포트폴리오 내 비중</em>을 확인해보세요.</span>
         </strong>
       </header>
       <SearchForm @onUpdate="updated" />
@@ -120,7 +121,7 @@ header.large {
 
   font: {
     weight: 300;
-    size: 3em;
+    size: 3rem;
   }
   text: {
     align: center;

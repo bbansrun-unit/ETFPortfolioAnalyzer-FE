@@ -23,7 +23,7 @@ export default {
   width: 100%;
   height: calc(30px + 2em);
   padding: {
-    left: calc(40px + 1.5em);
+    left: calc(40px + 2em);
   }
   top: 0;
   left: 0;

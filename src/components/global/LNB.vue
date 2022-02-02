@@ -45,7 +45,7 @@ $background: #fff;
   width: 100vw;
   height: 100vh;
   color: $default-color;
-  z-index: 1;
+  z-index: 1001;
 
   > .body {
     width: 400px;

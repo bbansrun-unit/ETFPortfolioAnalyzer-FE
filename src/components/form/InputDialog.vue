@@ -98,11 +98,22 @@ $background: #fff;
   padding: 1em;
   color: $default-color;
   background: $background;
-}
 
-header {
-  font: {
-    weight: 100;
+  header {
+    font: {
+      weight: 100;
+    }
+
+    h3 {
+      font: {
+        size: 3rem;
+      }
+      overflow: hidden;
+      text: {
+        overflow: ellipsis;
+      }
+      white-space: nowrap;
+    }
   }
 }
 

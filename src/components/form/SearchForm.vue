@@ -116,7 +116,9 @@ export default {
 
 <style lang="scss" scoped>
 input[type="text"] {
-  font-size: 1.2rem;
+  font: {
+    size: 1.5em;
+  }
   padding: 0.5em 1em;
   border: {
     radius: 2em;
