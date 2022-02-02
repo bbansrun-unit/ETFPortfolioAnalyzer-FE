@@ -1,0 +1,42 @@
+@import "./reset";
+@import "./fonts";
+
+* {
+    font: {
+        family: "11StreetGothic";
+        weight: 500;
+        size: 18px;
+    }
+    line-height: 1.6;
+    box-sizing: border-box;
+}
+
+a {
+    text: {
+        decoration: none;
+    }
+    &:visited {
+        color: #000;
+    }
+}
+
+body {
+    max: {
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+div.divider {
+    margin: 4em 0;
+}
+
+i {
+    font: {
+        style: italic;
+    }
+}
