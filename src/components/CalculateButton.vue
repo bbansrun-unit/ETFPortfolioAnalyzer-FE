@@ -17,7 +17,7 @@ export default {
 
 <style lang="scss" scoped>
 $button-size: 80px;
-$button-background: skyblue;
+$button-background: rgb(0, 89, 178);
 $button-type-circle: 50%;
 
 .calculate {
@@ -38,7 +38,7 @@ $button-type-circle: 50%;
   font: {
     size: 1.5em;
   }
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgb(0 0 0 / 10%) 0px 20px 25px, rgb(0 0 0 / 4%) 0px 10px 10px;
   z-index: 999;
   cursor: pointer;
 }
