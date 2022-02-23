@@ -3,13 +3,13 @@ import axios from "@/utils/axios";
 export default {
   getList() {
     return axios({
-      url: "/list",
+      url: "/analyzer/etfs",
       method: "GET",
     });
   },
   getDetail(code) {
     return axios({
-      url: `/compositions/${code}`,
+      url: `/analyzer/etf/${code}`,
       method: "GET",
     });
   },
