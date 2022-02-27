@@ -4,11 +4,11 @@
       <div
         class="etf"
         v-for="etf in etfs"
-        :key="etf.ISU_SRT_CD"
-        @click="onSelected(etf.ISU_SRT_CD)"
+        :key="etf.etfCode"
+        @click="onSelected(etf.etfCode)"
       >
-        <span>{{ etf.ISU_SRT_CD }}</span>
-        <span>{{ etf.ISU_ABBRV }}</span>
+        <span>{{ etf.etfCode }}</span>
+        <span>{{ etf.etfName }}</span>
       </div>
     </div>
     <div class="message" v-show="etfs.length > 0">

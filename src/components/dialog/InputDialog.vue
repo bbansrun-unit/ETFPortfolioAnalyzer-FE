@@ -4,7 +4,7 @@
     <form @submit.prevent>
       <section class="container">
         <header>
-          <h3>{{ etf.ISU_ABBRV }}</h3>
+          <h3>{{ etf.etfName }}</h3>
           포트폴리오 등록
         </header>
 
@@ -79,7 +79,7 @@ export default {
     register() {
       if (this.buy > 0 && this.amount > 0) {
         this.$emit("onDataInput", {
-          code: this.etf.ISU_SRT_CD,
+          code: this.etf.etfCode,
           retains: this.buy * this.amount,
         });
       }

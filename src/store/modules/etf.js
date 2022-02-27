@@ -8,17 +8,21 @@ export const etf = {
     filter: {},
     portfolio: {},
     totalAssets: 0,
+    totalElements: 0,
   }),
   mutations: {
+    getElements(state, data) {
+      state.totalElements = data['page']['totalElements'];
+    },
     add(state, { data, retains }) {
-      data.forEach((compst) => {
-        const amount = (compst.COMPST_RTO * retains) / 100;
+      data['_embedded']['isustocks'].forEach((compst) => {
+        const amount = (compst.stockRatio * retains) / 100;
         // eslint-disable-next-line no-prototype-builtins
-        if (state.portfolio.hasOwnProperty(compst.COMPST_ISU_CD)) {
-          state.portfolio[compst.COMPST_ISU_CD].value += amount;
+        if (state.portfolio.hasOwnProperty(compst.stockCode)) {
+          state.portfolio[compst.stockCode].value += amount;
         } else {
-          state.portfolio[compst.COMPST_ISU_CD] = {
-            group: compst.COMPST_ISU_NM,
+          state.portfolio[compst.stockCode] = {
+            group: compst.stockName,
             value: amount,
           };
         }
@@ -42,16 +46,22 @@ export const etf = {
     totalAssets(state) {
       return state.totalAssets;
     },
+    totalElements(state) {
+      return state.something;
+    }
   },
   actions: {
-    async list({ commit }) {
-      commit("fetchList", await Api.getList());
+    async list({ commit }, payload) {
+      commit("fetchList", await Api.getList(payload));
     },
     async query({ commit }, payload) {
       commit("filter", await Api.getDetail(payload));
     },
-    async addPortfolio({ commit }, { code, retains }) {
-      const { data } = await Api.getDetail(code);
+    async addPortfolio({ commit, state }, { code, retains }) {
+      const { data: page } = await Api.getDetail(code, null);
+      commit("getElements", page);
+
+      const { data } = await Api.getDetail(code, state.totalElements);
       commit("add", {
         data,
         retains,
