@@ -40,6 +40,7 @@ export default {
   name: "searchForm",
   data() {
     return {
+      totalETFs: 0,
       query: "",
       selectedETF: {},
       active: {
@@ -66,18 +67,20 @@ export default {
   },
   async mounted() {
     await this.$store.dispatch("etf/list");
-    this.allList = this.$store.getters["etf/list"].data;
+    this.totalETFs = this.$store.getters["etf/list"]['_meta']['totalItems'];
+    await this.$store.dispatch("etf/list", this.totalETFs);
+    this.allList = this.$store.getters["etf/list"]['data'];
   },
   methods: {
     async filter() {
       this.filteredList = this.allList.filter(
         (etf) =>
-          etf.ISU_SRT_CD.indexOf(this.query) !== -1 ||
-          etf.ISU_ABBRV.toLowerCase().indexOf(this.query) !== -1
+          etf.etfCode.indexOf(this.query) !== -1 ||
+          etf.etfName.toLowerCase().indexOf(this.query) !== -1
       );
     },
     reqAddPortfolio(code) {
-      const etfInfo = this.allList.find((etf) => etf.ISU_SRT_CD === code);
+      const etfInfo = this.allList.find((etf) => etf.etfCode === code);
       this.selectedETF = etfInfo;
       this.active.autocomplete = false;
       this.active.inputDialog = true;
@@ -90,7 +93,7 @@ export default {
     },
     enterOnInput() {
       if (this.filteredList.length === 1) {
-        const code = this.filteredList[0].ISU_SRT_CD;
+        const code = this.filteredList[0].etfCode;
         this.reqAddPortfolio(code);
       }
     },
