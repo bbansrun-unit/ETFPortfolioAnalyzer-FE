@@ -67,9 +67,9 @@ export default {
   },
   async mounted() {
     await this.$store.dispatch("etf/list");
-    this.totalETFs = this.$store.getters["etf/list"].data['page']['totalElements'];
+    this.totalETFs = this.$store.getters["etf/list"]['_meta']['totalItems'];
     await this.$store.dispatch("etf/list", this.totalETFs);
-    this.allList = this.$store.getters["etf/list"].data['_embedded']['etfs'];
+    this.allList = this.$store.getters["etf/list"]['data'];
   },
   methods: {
     async filter() {

@@ -12,10 +12,10 @@ export const etf = {
   }),
   mutations: {
     getElements(state, data) {
-      state.totalElements = data['page']['totalElements'];
+      state.totalElements = data;
     },
     add(state, { data, retains }) {
-      data['_embedded']['isustocks'].forEach((compst) => {
+      data['data'].forEach((compst) => {
         const amount = (compst.stockRatio * retains) / 100;
         // eslint-disable-next-line no-prototype-builtins
         if (state.portfolio.hasOwnProperty(compst.stockCode)) {
@@ -52,7 +52,8 @@ export const etf = {
   },
   actions: {
     async list({ commit }, payload) {
-      commit("fetchList", await Api.getList(payload));
+      let { data } = await Api.getList(payload);
+      commit("fetchList", data);
     },
     async query({ commit }, payload) {
       commit("filter", await Api.getDetail(payload));

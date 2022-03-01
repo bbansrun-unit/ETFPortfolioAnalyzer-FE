@@ -4,26 +4,19 @@ export default {
   getList(payload) {
     if (payload) {
       return axios({
-        url: `/analyzer/etfs?size=${payload}`,
+        url: `/api/etfs?size=${payload}`,
         method: 'GET',
       })
     }
 
     return axios({
-      url: "/analyzer/etfs",
+      url: "/api/etfs",
       method: "GET",
     });
   },
-  getDetail(code, elements=null) {
-    if (elements) {
-      return axios({
-        url: `/analyzer/isustocks/search/etf?etfCode=${code}&size=${elements}`,
-        method: 'GET',
-      })
-    }
-
+  getDetail(code) {
     return axios({
-      url: `/analyzer/isustocks/search/etf?etfCode=${code}`,
+      url: `/api/etf/${code}/stocks`,
       method: "GET",
     });
   },
